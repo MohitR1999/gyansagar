@@ -71,6 +71,54 @@ ongroupstandings({
 ```
 - This was the response for the points table. Now each entry in the `points` array denoted one position, and it had all the data that I needed. So in order to access the data, all I did was to take the response, pass it into an `eval` (I know it's unsafe, will come back to it later), and defined my own `ongroupstandings` function.
 - When my `ongroupstandings` function executed, I stored the value passed into it in a global variable, and hence the standard JSON data was available to me, now in a proper JavaScript Object. Yay!
+#### Talk is cheap, show me the code
+- Okay fine, here you go. Following is a snippet that would work in Node.js:
+```javascript
+const URL = 'https://ipl-stats-sports-mechanic.s3.ap-south-1.amazonaws.com/ipl/feeds/stats/203-groupstandings.js';
+let res = null;
+
+function ongroupstandings(data) {
+    res = data;
+}
+
+async function main() {
+    try {
+        const response = await fetch(URL);
+        const result = await response.text();
+        eval(result); // This will trigger execution of our function
+        console.log(res);
+    } catch (error) {
+        console.log("An error occured", error);
+    }
+}
+
+main();
+```
+- And this would work in your browser:
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <code id="root"></code>
+    <script>
+        function ongroupstandings(data) {
+            // do anything with the data here, like show in body
+            document.getElementById("root").innerText = JSON.stringify(data);
+        }
+    </script>
+    <script src="https://ipl-stats-sports-mechanic.s3.ap-south-1.amazonaws.com/ipl/feeds/stats/203-groupstandings.js"></script>
+</body>
+</html>
+```
+- Here we are simply including the JSONP callback as `JavaScript code` in our DOM. When the browser parses the HTML, during the execution of the code in `<script>` tags, first the function is defined, and then the foreign script is included.
+- This runs the callback which comes as a response in the browser, the JS function which we defined already gets executed, and the data is available to us for use. In this example I just simply append it to the existing HTML.
+- The output looks as follows:
+![[ipl-jsonp-output.png]]
 #### Well, interesting, but what about `eval()`?
 - The `eval()` function is considered to be unsafe in JavaScript as it can open up your code to injection attacks. However, as I'm NOT passing any user input in `eval()` and since the JSONP callback string is being trusted by the official IPL website, I guess I can trust it too.
 - There might be some other way to safely execute the JSONP callback, but I'm not aware of it. For now my purpose is fulfilled, and I'm happy with it. Moreover the API call is being done from my backend server, so it is unlikely that any injection attack can be done on it as I'm not exposing any endpoint which will utilise the `eval()` for processing other than getting data from these API endpoints
