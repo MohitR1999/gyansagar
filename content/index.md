@@ -8,3 +8,4 @@ Make yourself familiar here by visiting some of the following links:
 - [[cybersec/index|cybersec]]: A bit of cybersecurity stuff
 - [[dsa/index|dsa]]: Some of the problems I've solved during my practice of data structures and algorithms
 - [[misc/index|misc]]: Some uncategorised but interesting stuff
+- [[tips-tricks/index|tips-and-tricks]]: Some tips and tricks to make your digital life a bit better :)

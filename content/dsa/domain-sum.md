@@ -2,7 +2,7 @@
 title: Domain sum
 ---
 So this question was asked to me in the first round of my interview with Google, and unfortunately I couldn't crack it in the required time frame of 45 minutes. However, I pondered upon it and tried to solve it later and arrived at a solution that matched with the one stated in the problem statement. Bear with me for a while so that I can explain everything to you to the best of my capability :)
-#### Problem statement
+### Problem statement
 You are given a list of domain names (say `www.example.com`) and their corresponding scores (integer values). Your task is to find all the **leaf domains**, and the sum of their scores. Let me illustrate this with an example.
 
 Suppose you have the following table of domains and their scores:
@@ -31,17 +31,17 @@ Suppose we need to calculate the score for `www.test.com`, so it can be done as:
 ![[domain-sum-for-leaf-node.png]]
 
 Now, we need to do this for each leaf node in the tree.
-#### Constraints
+### Constraints
 - You can assume that the sum will always fit inside the normally available `Integer` datatype of any programming language
 - The domain name can be of any length, however for the context of this problem, no need of optimisation is needed for it
 - Any node in the domain tree can have any number of children
 - It is guaranteed that all the pairs of domain names and scores are unique, which means a specific domain cannot have multiple scores
-#### Approach
+### Approach
 - After going through the problem statement, it is clear that we need to calculate the root to leaf path sum of a tree in which each node can have `n` children, which is a classic example of a `Trie` data structure. To help with the basics, the [Wikipedia article on Trie](https://en.wikipedia.org/wiki/Trie) as well as a [sample problem on leetcode](https://leetcode.com/problems/implement-trie-prefix-tree/) can help
 - We first need to build the Trie, by splitting each string by `.` and forming a tree structure
 - Finally we'll traverse the whole tree and calculate the root to leaf path sum for each leaf
 - In order to avoid a forest, we can create a dummy node and make the remaining nodes as its children, so that the top level domain doesn't become a special case
-#### Sample run
+### Sample run
 - Let's say we want to insert the domains `www.test.abc.com` and `test.abc.com` in our trie structure
 - First of all we create a dummy node, with no keyword from domain and a score of 0
 ![[dummy.png]]
@@ -56,7 +56,7 @@ Now, we need to do this for each leaf node in the tree.
 - In a similar fashion, we can insert all the given domains in our tree, and finally it would look like this:
 ![[final-tree.png]]
 - Now, we can simply apply the root to leaf path sum on this tree using a backtracking algorithm, calculate the sum, and print the corresponding domain name.
-#### Talk is cheap, show me the code
+### Talk is cheap, show me the code
 This is the C++ code for the logic explained above:
 ```cpp
 #include <bits/stdc++.h>
