@@ -23,5 +23,6 @@ Interested for a technical look? Let's dive right in
 - This is where AdAway comes into picture: it creates a local VPN service, which means all the internet traffic going through your phone passes through it. The VPN service can change how DNS resolution works.
 - Within AdAway, there's a huge list of community-contributed ad serving domains. The AdAway VPN service does this simple job: it translates every domain to the local IP of your device, which is `127.0.0.1`. Now since you probably won't have any web server running on your phone, the request for ads never reaches the domain it was intended for.
 - Hence, the request for serving ads fails, and you don't see any ads at all.
+- For apps like YouTube, Spotify, Hotstar etc., their ads are served from the same domain as their content. Hence, the solution provided by AdAway won't work, as if you block the domain `youtube.com`, you won't be able to see the videos either.
 
 Sorry iOS folks, if you're also facing the same problem, there's only one solution: switch to Android first😎 
