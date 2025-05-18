@@ -3,9 +3,9 @@ title: Level 1 to Level 2
 ---
 Now while being logged in as the user `bandit1`, you need to find the password of user `bandit2` in order to complete this level.
 
-If you haven't completed the previous level, do check out the write-up for Level 1, which is present [[Level0_to_Level1|here]].
+If you haven't completed the previous level, do check out the write-up for Level 0 to Level 1, which is present [[Level0_to_Level1|here]].
 
-#### Follow these steps to proceed:
+### Follow these steps to proceed:
 - Use the `ls` command to list all the files in a directory
 - There is a file named `-` in the home directory
 - Now, while reading the file, we encounter a problem: the character `-` is a special character in `bash` shell, which is interpreted differently and not how we want it.

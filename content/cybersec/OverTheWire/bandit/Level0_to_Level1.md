@@ -5,7 +5,7 @@ Now while being logged in as the user `bandit0`, you need to find the password o
 
 If you haven't completed the previous level, do check out the write-up for Level 0, which is present [[Level_0|here]].
 
-#### Follow these steps to proceed:
+### Follow these steps to proceed:
 - Locate the file  `readme` in the home directory of the user `bandit0`
 - Use the `ls` command to list all the files in a directory
 - Read the contents of the `readme` file using `cat` command as: `cat readme`
