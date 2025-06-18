@@ -1,7 +1,7 @@
 ---
 title: Graph Binary Tree I
 ---
-This question was asked to me in the first round of Google's interview on 16th July 2025. I was able to solve it after an example given by the interviewer. Read along to know more :)
+This question was asked to me in the first round of Google's interview on 16th June 2025. I was able to solve it after an example given by the interviewer. Read along to know more :)
 ### Problem statement
 You are given an acyclic, undirected, connected graph in which each vertex has at most 3 neighbours. You have to find out whether the graph can also be a valid **binary tree**, and if yes, then return the integer id of vertex which can be used as the root of the tree. Otherwise, return `-1`.
 
@@ -30,6 +30,7 @@ Initially I wasn't able to think of any solution, however, an example given by t
 ![[graph-tree-1-pb.png]]
 
 Now, let's try forming the tree from each node. I'll just draw the graph in a tree-like format in order to make my point clear:
+
 ![[graph-tree-1-0-root.png]]
 
 This is a valid binary tree. Let's try with other nodes and see what results we get
