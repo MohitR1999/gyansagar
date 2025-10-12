@@ -1,6 +1,10 @@
 ---
 title: Android without ads
 ---
+### ⚠️DISCLAIMER
+Contents of this article might fall into a grey area from legal standpoint (I feel), hence I do not take any responsibility if you get into any legal troubles. All this is solely for educational purposes.
+
+
 Hey there fellow android users,
 - Are you also frustrated with the number of ads you see in almost any app?
 - Does skimming through a news article puts you through the misery of navigating through a plethora of banners and popup ads?
